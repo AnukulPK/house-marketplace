@@ -6,6 +6,8 @@ import Offers from "./pages/Offers";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
         {/* Navbar */}
         <Navbar />
       </Router>
+      <ToastContainer />
     </>
   );
 }
