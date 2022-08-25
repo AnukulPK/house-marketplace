@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import { toast } from "react-toastify";
 
 const CreateListing = () => {
-  const [geoLocationEnabled, setGeoLocationEnabled] = useState(true);
+  const [geoLocationEnabled, setGeoLocationEnabled] = useState(false);
   const [formData, setFormData] = useState({
     type: "rent",
     name: "",
@@ -64,7 +65,30 @@ const CreateListing = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setLoading(true);
+    if (discountedPrice >= regularPrice) {
+      setLoading(false);
+      toast.error("Discounted Price needs tobe less than regular price");
+      return;
+    }
+
+    if (images.length > 6) {
+      setLoading(false);
+      toast.error("Max 6 images");
+      return;
+    }
+
+    let geoLocation = {};
+    let location;
+    if (geoLocationEnabled) {
+      toast.error("Currently service is disabled");
+    } else {
+      geoLocation.lat = latitude;
+      geoLocation.lng = longitude;
+      location = address;
+    }
+
+    setLoading(false);
   };
   const onMutate = (e) => {
     let boolean = null;
