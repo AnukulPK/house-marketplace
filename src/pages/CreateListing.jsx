@@ -146,7 +146,7 @@ const CreateListing = () => {
 
     const formDataCopy = {
       ...formData,
-      imgUrls,
+      imageUrls: imgUrls,
       geoLocation,
       timestamp: serverTimestamp(),
     };
