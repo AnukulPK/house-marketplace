@@ -41,7 +41,7 @@ const Listing = () => {
 
   return (
     <main>
-      <Swiper slidesPerView={1} pagination={{ clickable: true }}>
+      {/* <Swiper slidesPerView={1} pagination={{ clickable: true }}>
         {listing.imageUrls.map((url, index) => (
           <SwiperSlide key={index}>
             <div
@@ -53,7 +53,7 @@ const Listing = () => {
             ></div>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
       <div
         className="shareIconDiv"
         onClick={() => {
