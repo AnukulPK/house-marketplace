@@ -14,6 +14,7 @@ import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
 
 const CreateListing = () => {
+  // eslint-disable-next-line
   const [geoLocationEnabled, setGeoLocationEnabled] = useState(false);
   const [formData, setFormData] = useState({
     type: "rent",

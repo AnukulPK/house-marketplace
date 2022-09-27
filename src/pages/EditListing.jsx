@@ -14,6 +14,7 @@ import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
 
 const EditListing = () => {
+  // eslint-disable-next-line
   const [geoLocationEnabled, setGeoLocationEnabled] = useState(false);
   const [formData, setFormData] = useState({
     type: "rent",
@@ -59,6 +60,7 @@ const EditListing = () => {
       toast.error("You cannot edit the listing");
       navigate("/");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //Fetch listing to edit
@@ -79,6 +81,7 @@ const EditListing = () => {
     };
 
     fetchListing();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.listingId, navigate]);
 
   //Sets userRef to logged in user
